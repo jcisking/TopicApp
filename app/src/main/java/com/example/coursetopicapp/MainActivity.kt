@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -17,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.coursetopicapp.ui.theme.CourseTopicAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,15 +43,21 @@ fun TopicCard(
     modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = modifier
+        modifier = modifier.padding(30.dp)
     ) {
         Row {
             Image(
                 painter = painterResource(id = R.drawable.fashion),
                 contentDescription = null
             )
-            Column {
-                Text(text = stringResource(id = R.string.fashion) )
+            Column(
+                modifier = Modifier
+                    .padding(start = 12.dp, end = 12.dp, top = 12.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.fashion),
+                    modifier = Modifier.padding(bottom = 0.dp)
+                )
                 Row {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_grain),
